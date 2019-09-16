@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+       function weightConverter() {
+          var valNum = document.getElementById("inputWeight").value;
+          var pounds = (parseFloat(valNum) / 3) * 10000;
+          var kilos = pounds / 2.2046;
+          if (document.getElementById("lbs").checked) {
+            valNum = pounds;
+          }
+          else {
+            valNum = kilos;
+          }
+          document.getElementById("outputBees").innerHTML = Math.round(valNum);
+        }
+      </script>
+    </head>
+
+  <body>
+        <div class="container">
+
+            <p>
+                <h1>How many bees???</h1>
+                <p> Ever wonder how much something weighs in bees? An apple? A car? Your beloved pet? How much do YOU weigh in bees? Wonder no more, enter a weight and finally be at ease.</p>
+                <form>
+                <input id="inputWeight" type="number" placeholder="Enter Weight">
+                <div class="input-group" >
+                    <label><input type="radio" id="lbs" name="units" required checked>lbs</label>
+                    <label><input type="radio" id="kgs" name="units">kgs</label>
+                </div>
+            </p>
+              <p>Number of Bees: <span id="outputBees"></span></p>
+            </form>
+              <button id="beeButton" type="button" onclick="weightConverter()">How many bees???</button>
+          </div>
+
+  </body>
+</html>
